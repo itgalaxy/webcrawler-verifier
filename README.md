@@ -3,9 +3,7 @@
 [![Latest Stable Version](https://poser.pugx.org/itgalaxy/webcrawler-verifier/v/stable)](
 https://packagist.org/packages/itgalaxy/webcrawler-verifier)
 [![Travis Build Status](https://img.shields.io/travis/itgalaxy/webcrawler-verifier/master.svg?label=build)
-](https://travis-ci.org/itgalaxy/webcrawler-verifier) 
-[![Dependency Status](https://www.versioneye.com/user/projects/57f4fd40886dd100475decf3/badge.svg?style=flat-square)](
-https://www.versioneye.com/user/projects/57f4fd40886dd100475decf3)
+](https://travis-ci.org/itgalaxy/webcrawler-verifier)
 
 Webcralwer-Verifier is a PHP library to ensure that robots are from the operator they claim to be, 
 eg that Googlebot is actually coming from Google and not from some spoofer.
