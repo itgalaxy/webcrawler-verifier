@@ -1,0 +1,28 @@
+# Logs
+logs
+*.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.lock
+
+# Build
+build/
+
+# gitkeep
+!.gitkeep
+
+# IDE
+.idea
+*.iml
+
+# VSCode metadata
+.vscode
+
+# Mac files
+.DS_Store
+
+# Composer
+vendor
