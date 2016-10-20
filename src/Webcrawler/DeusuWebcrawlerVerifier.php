@@ -3,9 +3,9 @@ namespace WebcrawlerVerifier\Webcrawler;
 
 use WebcrawlerVerifier\DNS\ReverseVerifier as ReverseVerifier;
 
-class ExabotVerifier implements WebcrawlerVerifierInterface
+class DeusuWebcrawlerVerifier implements WebcrawlerVerifierInterface
 {
-    protected $allowedHostNames = ['exabot.com'];
+    protected $allowedHostNames = ['deusu.de', 'mschoebel.de'];
 
     /**
      * Checks whether the given IP address really belongs to a valid host or not

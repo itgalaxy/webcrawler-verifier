@@ -3,9 +3,9 @@ namespace WebcrawlerVerifier\Webcrawler;
 
 use WebcrawlerVerifier\DNS\ReverseVerifier as ReverseVerifier;
 
-class YahooslurpVerifier implements WebcrawlerVerifierInterface
+class GoogleWebcrawlerVerifier implements WebcrawlerVerifierInterface
 {
-    protected $allowedHostNames = ['crawl.yahoo.net', 'yse.yahoo.net'];
+    protected $allowedHostNames = ['google.com', 'googlebot.com'];
 
     /**
      * Checks whether the given IP address really belongs to a valid host or not

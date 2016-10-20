@@ -83,13 +83,15 @@ if (!empty($_SERVER['HTTP_USER_AGENT']) && !empty($_SERVER['REMOTE_ADDR'])) {
 - **Apple**: `Applebot`.
 - **Baidu**: `Baiduspider`.
 - **Bing**: `bingbot`, `msnbot`, `adidxbot`, `BingPreview`.
+- **Deuse**: `DeuSu`.
 - **Exalead**: `Exabot`.
 - **Google**: `Googlebot`.
 - **Tiscali.it**: `istellabot`.
 - **Mail.ru**: `Mail.RU_Bot`, `Mail.RU`.
 - **Seznam.cz**: `SeznamBot`.
+- **Sputni**: `SputnikBot`.
 - **Yahoo**: `Yahoo! Slurp`.
-- **Yandex**: `Yandexbot`.
+- **Yandex**: `Yandexbot`, `YaDirectFetcher`.
 
 Contributions are welcome.
 

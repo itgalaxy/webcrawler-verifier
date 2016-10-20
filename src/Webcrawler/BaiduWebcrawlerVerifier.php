@@ -3,9 +3,9 @@ namespace WebcrawlerVerifier\Webcrawler;
 
 use WebcrawlerVerifier\DNS\ReverseVerifier as ReverseVerifier;
 
-class ApplebotVerifier implements WebcrawlerVerifierInterface
+class BaiduWebcrawlerVerifier implements WebcrawlerVerifierInterface
 {
-    protected $allowedHostNames = ['apple.com'];
+    protected $allowedHostNames = ['baidu.com', 'baidu.jp'];
 
     /**
      * Checks whether the given IP address really belongs to a valid host or not

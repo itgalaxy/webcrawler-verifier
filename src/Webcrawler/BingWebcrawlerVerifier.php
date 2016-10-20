@@ -3,9 +3,9 @@ namespace WebcrawlerVerifier\Webcrawler;
 
 use WebcrawlerVerifier\DNS\ReverseVerifier as ReverseVerifier;
 
-class BaiduspiderVerifier implements WebcrawlerVerifierInterface
+class BingWebcrawlerVerifier implements WebcrawlerVerifierInterface
 {
-    protected $allowedHostNames = ['baidu.com', 'baidu.jp'];
+    protected $allowedHostNames = ['search.msn.com'];
 
     /**
      * Checks whether the given IP address really belongs to a valid host or not

@@ -10,20 +10,23 @@ class WebcrawlerVerifier
     const VERIFIED = 1;
 
     protected $webcrawlerVerifiers = [
-        'Applebot' => 'WebcrawlerVerifier\Webcrawler\ApplebotVerifier',
-        'Baiduspider' => 'WebcrawlerVerifier\Webcrawler\BaiduspiderVerifier',
-        'bingbot' => 'WebcrawlerVerifier\Webcrawler\BingbotVerifier',
-        'msnbot' => 'WebcrawlerVerifier\Webcrawler\BingbotVerifier',
-        'adidxbot' => 'WebcrawlerVerifier\Webcrawler\BingbotVerifier',
-        'BingPreview' => 'WebcrawlerVerifier\Webcrawler\BingbotVerifier',
-        'Exabot' => 'WebcrawlerVerifier\Webcrawler\ExabotVerifier',
-        'Google' => 'WebcrawlerVerifier\Webcrawler\GooglebotVerifier',
-        'istellabot' => 'WebcrawlerVerifier\Webcrawler\IstellaBotVerifier',
-        'Mail.RU_Bot' => 'WebcrawlerVerifier\Webcrawler\MailRUBotVerifier',
-        'Mail.RU' => 'WebcrawlerVerifier\Webcrawler\MailRUBotVerifier',
-        'Seznam' => 'WebcrawlerVerifier\Webcrawler\SeznamBotVerifier',
-        'Yahoo! Slurp' => 'WebcrawlerVerifier\Webcrawler\YahooslurpVerifier',
-        'Yandex' => 'WebcrawlerVerifier\Webcrawler\YandexbotVerifier'
+        'Applebot' => 'WebcrawlerVerifier\Webcrawler\AppleWebcrawlerVerifier',
+        'Baiduspider' => 'WebcrawlerVerifier\Webcrawler\BaiduWebcrawlerVerifier',
+        'bingbot' => 'WebcrawlerVerifier\Webcrawler\BingWebcrawlerVerifier',
+        'msnbot' => 'WebcrawlerVerifier\Webcrawler\BingWebcrawlerVerifier',
+        'adidxbot' => 'WebcrawlerVerifier\Webcrawler\BingWebcrawlerVerifier',
+        'BingPreview' => 'WebcrawlerVerifier\Webcrawler\BingWebcrawlerVerifier',
+        'DeuSu' => 'WebcrawlerVerifier\Webcrawler\DeusuWebcrawlerVerifier',
+        'Exabot' => 'WebcrawlerVerifier\Webcrawler\ExaleadWebcrawlerVerifier',
+        'Google' => 'WebcrawlerVerifier\Webcrawler\GoogleWebcrawlerVerifier',
+        'istellabot' => 'WebcrawlerVerifier\Webcrawler\IstellaWebcrawlerVerifier',
+        'Mail.RU_Bot' => 'WebcrawlerVerifier\Webcrawler\MailRUWebcrawlerVerifier',
+        'Mail.RU' => 'WebcrawlerVerifier\Webcrawler\MailRUWebcrawlerVerifier',
+        'Seznam' => 'WebcrawlerVerifier\Webcrawler\SeznamWebcrawlerVerifier',
+        'SputnikBot' => 'WebcrawlerVerifier\Webcrawler\SputnikWebcrawlerVerifier',
+        'Yahoo! Slurp' => 'WebcrawlerVerifier\Webcrawler\YahooWebcrawlerVerifier',
+        'Yandex' => 'WebcrawlerVerifier\Webcrawler\YandexWebcrawlerVerifier',
+        'YaDirectFetcher' => 'WebcrawlerVerifier\Webcrawler\YandexWebcrawlerVerifier'
     ];
 
     public function __construct(array $additionalWebcrawlerVerifiers = [])

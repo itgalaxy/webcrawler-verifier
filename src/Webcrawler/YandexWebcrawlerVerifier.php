@@ -3,9 +3,9 @@ namespace WebcrawlerVerifier\Webcrawler;
 
 use WebcrawlerVerifier\DNS\ReverseVerifier as ReverseVerifier;
 
-class IstellaBotVerifier implements WebcrawlerVerifierInterface
+class YandexWebcrawlerVerifier implements WebcrawlerVerifierInterface
 {
-    protected $allowedHostNames = ['istella.it'];
+    protected $allowedHostNames = ['yandex.ru', 'yandex.net', 'yandex.com'];
 
     /**
      * Checks whether the given IP address really belongs to a valid host or not

@@ -3,9 +3,9 @@ namespace WebcrawlerVerifier\Webcrawler;
 
 use WebcrawlerVerifier\DNS\ReverseVerifier as ReverseVerifier;
 
-class YandexbotVerifier implements WebcrawlerVerifierInterface
+class MailRUWebcrawlerVerifier implements WebcrawlerVerifierInterface
 {
-    protected $allowedHostNames = ['yandex.ru', 'yandex.net', 'yandex.com'];
+    protected $allowedHostNames = ['mail.ru'];
 
     /**
      * Checks whether the given IP address really belongs to a valid host or not

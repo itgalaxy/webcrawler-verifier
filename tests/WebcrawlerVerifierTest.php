@@ -38,7 +38,7 @@ class WebcrawlerVerifierTest extends TestCase
         ));
     }
 
-    public function testVerifyApplebot()
+    public function testVerifyAppleWebcrawler()
     {
         $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();
         $userAgent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/600.2.5 (KHTML, like Gecko) '
@@ -54,7 +54,7 @@ class WebcrawlerVerifierTest extends TestCase
         ));
     }
 
-    public function testVerifyBaiduspider()
+    public function testVerifyBaiduWebcrawler()
     {
         $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();
         $userAgent = 'Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html)';
@@ -69,7 +69,7 @@ class WebcrawlerVerifierTest extends TestCase
         ));
     }
 
-    public function testVerifyBingbot()
+    public function testVerifyBingWebcrawler()
     {
         $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();
         $bindbotUserAgent = 'Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)';
@@ -129,7 +129,22 @@ class WebcrawlerVerifierTest extends TestCase
         ));
     }
 
-    public function testVerifyExabot()
+    public function testVerifyDeusuWebcrawler()
+    {
+        $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();
+        $userAgent = 'Mozilla/5.0 (compatible; DeuSu/5.0.2; +https://deusu.de/robot.html)';
+
+        $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
+            $userAgent,
+            '192.168.0.1'
+        ));
+        $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
+            $userAgent,
+            '85.93.91.84'
+        ));
+    }
+
+    public function testVerifyExaleadWebcrawler()
     {
         $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();
         $userAgent = 'Mozilla/5.0 (compatible; Exabot/3.0; +http://www.exabot.com/go/robot)';
@@ -144,7 +159,7 @@ class WebcrawlerVerifierTest extends TestCase
         ));
     }
 
-    public function testVerifyGooglebot()
+    public function testVerifyGoogleWebcrawler()
     {
         $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();
         $userAgent = 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)';
@@ -163,7 +178,7 @@ class WebcrawlerVerifierTest extends TestCase
         ));
     }
 
-    public function testVerifyIstellaBot()
+    public function testVerifyIstellaWebcrawler()
     {
         $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();
         $userAgent = 'istellabot/t.1';
@@ -178,7 +193,7 @@ class WebcrawlerVerifierTest extends TestCase
         ));
     }
 
-    public function testVerifyMailRUBot()
+    public function testVerifyMailRUWebcrawler()
     {
         $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();
         $userAgent = 'Mozilla/5.0 (compatible; Linux x86_64; Mail.RU_Bot/2.0; +http://go.mail.ru/help/robots)';
@@ -193,7 +208,7 @@ class WebcrawlerVerifierTest extends TestCase
         ));
     }
 
-    public function testVerifySeznamBot()
+    public function testVerifySeznamWebcrawler()
     {
         $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();
         $userAgent = 'Mozilla/5.0 (compatible; SeznamBot/3.2; +http://napoveda.seznam.cz/en/seznambot-intro/)';
@@ -208,7 +223,22 @@ class WebcrawlerVerifierTest extends TestCase
         ));
     }
 
-    public function testVerifyYahooslurp()
+    public function testVerifySputnikWebcrawler()
+    {
+        $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();
+        $userAgent = 'Mozilla/5.0 (compatible; SputnikBot/2.3; +http://corp.sputnik.ru/webmaster)';
+
+        $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
+            $userAgent,
+            '192.168.0.1'
+        ));
+        $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
+            $userAgent,
+            '5.143.231.45'
+        ));
+    }
+
+    public function testVerifyYahooWebcrawler()
     {
         $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();
         $userAgent = 'Mozilla/5.0 (compatible; Yahoo! Slurp; http://help.yahoo.com/help/us/ysearch/slurp)';
@@ -223,22 +253,33 @@ class WebcrawlerVerifierTest extends TestCase
         ));
     }
 
-    public function testVerifyYandexbot()
+    public function testVerifyYandexWebcrawler()
     {
         $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();
-        $userAgent = 'Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)';
+        $standardUserAgent = 'Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)';
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
-            $userAgent,
+            $standardUserAgent,
             '192.168.0.1'
         ));
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
-            $userAgent,
+            $standardUserAgent,
             '95.108.129.196'
         ));
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
-            $userAgent,
+            $standardUserAgent,
             '37.9.118.28'
+        ));
+
+        $directFetcherUserAgent = 'Mozilla/5.0 (compatible; YaDirectFetcher/1.0; Dyatel; +http://yandex.com/bots)';
+
+        $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
+            $directFetcherUserAgent,
+            '192.168.0.1'
+        ));
+        $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
+            $directFetcherUserAgent,
+            '95.108.129.196'
         ));
     }
 }

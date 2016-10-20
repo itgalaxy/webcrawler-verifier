@@ -3,9 +3,9 @@ namespace WebcrawlerVerifier\Webcrawler;
 
 use WebcrawlerVerifier\DNS\ReverseVerifier as ReverseVerifier;
 
-class SeznamBotVerifier implements WebcrawlerVerifierInterface
+class IstellaWebcrawlerVerifier implements WebcrawlerVerifierInterface
 {
-    protected $allowedHostNames = ['seznam.cz'];
+    protected $allowedHostNames = ['istella.it'];
 
     /**
      * Checks whether the given IP address really belongs to a valid host or not

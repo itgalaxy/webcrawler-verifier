@@ -3,9 +3,9 @@ namespace WebcrawlerVerifier\Webcrawler;
 
 use WebcrawlerVerifier\DNS\ReverseVerifier as ReverseVerifier;
 
-class BingbotVerifier implements WebcrawlerVerifierInterface
+class AppleWebcrawlerVerifier implements WebcrawlerVerifierInterface
 {
-    protected $allowedHostNames = ['search.msn.com'];
+    protected $allowedHostNames = ['apple.com'];
 
     /**
      * Checks whether the given IP address really belongs to a valid host or not

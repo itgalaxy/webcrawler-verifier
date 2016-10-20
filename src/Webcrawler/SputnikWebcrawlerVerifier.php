@@ -3,9 +3,9 @@ namespace WebcrawlerVerifier\Webcrawler;
 
 use WebcrawlerVerifier\DNS\ReverseVerifier as ReverseVerifier;
 
-class GooglebotVerifier implements WebcrawlerVerifierInterface
+class SputnikWebcrawlerVerifier implements WebcrawlerVerifierInterface
 {
-    protected $allowedHostNames = ['google.com', 'googlebot.com'];
+    protected $allowedHostNames = ['sputnik.ru'];
 
     /**
      * Checks whether the given IP address really belongs to a valid host or not
