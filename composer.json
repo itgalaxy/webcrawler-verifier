@@ -23,6 +23,17 @@
         "test": "@phpunit"
     },
     "autoload": {
-        "psr-4": {"WebcrawlerVerifier\\": "src/"}
+        "psr-4": {
+            "WebcrawlerVerifier\\": "src/"
+        }
+    },
+    "archive": {
+        "exclude": [
+            "!vendor",
+            "tests",
+            "*phpunit.xml*",
+            ".travis.yml",
+            "composer.phar"
+        ]
     }
 }
