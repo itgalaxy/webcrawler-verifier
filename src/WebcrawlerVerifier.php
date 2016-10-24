@@ -25,6 +25,7 @@ class WebcrawlerVerifier
         'Mail.RU' => 'WebcrawlerVerifier\Webcrawler\MailRUWebcrawlerVerifier',
         'Seznam' => 'WebcrawlerVerifier\Webcrawler\SeznamWebcrawlerVerifier',
         'SputnikBot' => 'WebcrawlerVerifier\Webcrawler\SputnikWebcrawlerVerifier',
+        'Steeler' => 'WebcrawlerVerifier\Webcrawler\SteelerWebcrawlerVerifier',
         'Yahoo! Slurp' => 'WebcrawlerVerifier\Webcrawler\YahooWebcrawlerVerifier',
         'Yandex' => 'WebcrawlerVerifier\Webcrawler\YandexWebcrawlerVerifier',
         'YaDirectFetcher' => 'WebcrawlerVerifier\Webcrawler\YandexWebcrawlerVerifier'
