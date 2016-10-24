@@ -19,6 +19,7 @@ class WebcrawlerVerifier
         'DeuSu' => 'WebcrawlerVerifier\Webcrawler\DeusuWebcrawlerVerifier',
         'Exabot' => 'WebcrawlerVerifier\Webcrawler\ExaleadWebcrawlerVerifier',
         'Google' => 'WebcrawlerVerifier\Webcrawler\GoogleWebcrawlerVerifier',
+        'GrapeshotCrawler' => 'WebcrawlerVerifier\Webcrawler\GrapeshotWebcrawlerVerifier',
         'istellabot' => 'WebcrawlerVerifier\Webcrawler\IstellaWebcrawlerVerifier',
         'Mail.RU_Bot' => 'WebcrawlerVerifier\Webcrawler\MailRUWebcrawlerVerifier',
         'Mail.RU' => 'WebcrawlerVerifier\Webcrawler\MailRUWebcrawlerVerifier',

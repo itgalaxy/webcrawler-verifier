@@ -178,6 +178,21 @@ class WebcrawlerVerifierTest extends TestCase
         ));
     }
 
+    public function testVerifyGrapeshotWebcrawler()
+    {
+        $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();
+        $userAgent = 'Mozilla/5.0 (compatible; GrapeshotCrawler/2.0; +https://www.grapeshot.com/crawler/)';
+
+        $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
+            $userAgent,
+            '192.168.0.1'
+        ));
+        $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
+            $userAgent,
+            '89.145.95.68'
+        ));
+    }
+
     public function testVerifyIstellaWebcrawler()
     {
         $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();
