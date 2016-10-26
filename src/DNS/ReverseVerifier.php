@@ -11,7 +11,7 @@ class ReverseVerifier
         $ipAfterLookup = gethostbyname($host);
 
         $hostIsValid = !!array_filter($allowedHostNames, function ($validHost) use ($host) {
-            return StringHelper::endsWith($host, $validHost) !== false;
+            return StringHelper::endsWith($validHost, $host) !== false;
         });
 
         return $hostIsValid && $ipAfterLookup === $ip;

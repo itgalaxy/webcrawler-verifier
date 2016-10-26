@@ -1,11 +1,13 @@
 <?php
+namespace WebcrawlerVerifier\Tests;
+
 use PHPUnit\Framework\TestCase;
 
 class WebcrawlerVerifierTest extends TestCase
 {
     public function testVerifyInvalidUserAgent()
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();
         $userAgent = [];
 
@@ -17,7 +19,7 @@ class WebcrawlerVerifierTest extends TestCase
 
     public function testVerifyInvalidIP()
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();
         $userAgent = 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)';
 

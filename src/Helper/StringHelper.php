@@ -3,7 +3,7 @@ namespace WebcrawlerVerifier\Helper;
 
 class StringHelper
 {
-    public static function endsWith($haystack, $needle)
+    public static function endsWith($needle, $haystack)
     {
         $length = strlen($needle);
 

@@ -1,8 +1,7 @@
 <?php
 namespace WebcrawlerVerifier\Webcrawler;
 
-use IPTools\IP;
-use IPTools\Range;
+use WebcrawlerVerifier\Helper\Range;
 
 class TwitterWebcrawlerVerifier implements WebcrawlerVerifierInterface
 {
@@ -17,20 +16,6 @@ class TwitterWebcrawlerVerifier implements WebcrawlerVerifierInterface
      */
     public function verify($ip)
     {
-        if (is_string($this->allowedRanges)) {
-            return Range::parse($this->allowedRanges)->contains(new IP($ip));
-        }
-
-        $verified = false;
-
-        foreach($this->allowedRanges as $range) {
-            $verified = Range::parse($range)->contains(new IP($ip));
-
-            if ($verified) {
-                break;
-            }
-        }
-
-        return $verified;
+        return Range::inRange($this->allowedRanges, $ip);
     }
 }
