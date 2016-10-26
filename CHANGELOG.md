@@ -5,6 +5,7 @@
 - Added: `Twitter` webcrawler verifier.
 - Chore: refactoring.
 - Chore: integrate `coveralls.io` and add badge `Coverage Status`.
+- Chore: add badge `Dependency Status`.
 
 # 1.1.0 - 2016-10-24
 
