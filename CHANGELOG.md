@@ -1,6 +1,7 @@
 # Head
 
 - Added: `Steeler` webcrawler verifier.
+- Added: `Twitter` webcrawler verifier.
 
 # 1.1.0 - 2016-10-24
 

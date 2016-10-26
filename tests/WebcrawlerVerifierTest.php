@@ -268,6 +268,25 @@ class WebcrawlerVerifierTest extends TestCase
         ));
     }
 
+    public function testVerifyTwitterWebcrawler()
+    {
+        $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();
+        $userAgent = 'Twitterbot/1.0';
+
+        $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
+            $userAgent,
+            '192.168.0.1'
+        ));
+        $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
+            $userAgent,
+            '199.16.156.126'
+        ));
+        $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
+            $userAgent,
+            '199.59.148.209'
+        ));
+    }
+
     public function testVerifyYahooWebcrawler()
     {
         $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();
@@ -310,6 +329,22 @@ class WebcrawlerVerifierTest extends TestCase
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $directFetcherUserAgent,
             '95.108.129.196'
+        ));
+    }
+
+    public function testVerifyMultipleWebcrawler()
+    {
+        $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();
+        $userAgent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/601.2.4 (KHTML, like Gecko)'
+            . ' Version/9.0.1 Safari/601.2.4 facebookexternalhit/1.1 Facebot Twitterbot/1.0';
+
+        $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
+            $userAgent,
+            '192.168.0.1'
+        ));
+        $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
+            $userAgent,
+            '92.246.177.177'
         ));
     }
 }

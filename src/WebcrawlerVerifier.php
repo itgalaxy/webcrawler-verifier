@@ -26,6 +26,7 @@ class WebcrawlerVerifier
         'Seznam' => 'WebcrawlerVerifier\Webcrawler\SeznamWebcrawlerVerifier',
         'SputnikBot' => 'WebcrawlerVerifier\Webcrawler\SputnikWebcrawlerVerifier',
         'Steeler' => 'WebcrawlerVerifier\Webcrawler\SteelerWebcrawlerVerifier',
+        'Twitterbot' => 'WebcrawlerVerifier\Webcrawler\TwitterWebcrawlerVerifier',
         'Yahoo! Slurp' => 'WebcrawlerVerifier\Webcrawler\YahooWebcrawlerVerifier',
         'Yandex' => 'WebcrawlerVerifier\Webcrawler\YandexWebcrawlerVerifier',
         'YaDirectFetcher' => 'WebcrawlerVerifier\Webcrawler\YandexWebcrawlerVerifier'
