@@ -86,10 +86,13 @@ if (!empty($_SERVER['HTTP_USER_AGENT']) && !empty($_SERVER['REMOTE_ADDR'])) {
 - **Deuse**: `DeuSu`.
 - **Exalead**: `Exabot`.
 - **Google**: `Googlebot`.
+- **Grapeshot**: `GrapeshotCrawler`.
 - **Tiscali.it**: `istellabot`.
 - **Mail.ru**: `Mail.RU_Bot`, `Mail.RU`.
 - **Seznam.cz**: `SeznamBot`.
 - **Sputni**: `SputnikBot`.
+- **Steeler**: `Steeler`.
+- **Twitter**: `Twitterbot`.
 - **Yahoo**: `Yahoo! Slurp`.
 - **Yandex**: `Yandexbot`, `YaDirectFetcher`.
 
