@@ -4,6 +4,7 @@
 - Added: `Steeler` webcrawler verifier.
 - Added: `Twitter` webcrawler verifier.
 - Chore: refactoring.
+- Chore: integrate `coveralls.io` and add badge `Coverage Status`.
 
 # 1.1.0 - 2016-10-24
 
