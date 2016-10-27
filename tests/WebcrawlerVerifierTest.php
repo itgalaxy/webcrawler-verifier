@@ -71,6 +71,21 @@ class WebcrawlerVerifierTest extends TestCase
         ));
     }
 
+    public function testVerifyBegunWebcrawler()
+    {
+        $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();
+        $userAgent = 'Mozilla/5.0 (compatible; BegunAdvertising/3.0; +http://begun.ru/begun/technology/indexer/)';
+
+        $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
+            $userAgent,
+            '192.168.0.1'
+        ));
+        $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
+            $userAgent,
+            '91.192.149.231'
+        ));
+    }
+
     public function testVerifyBingWebcrawler()
     {
         $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();

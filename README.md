@@ -86,6 +86,7 @@ if (!empty($_SERVER['HTTP_USER_AGENT']) && !empty($_SERVER['REMOTE_ADDR'])) {
 
 - **Apple**: `Applebot`.
 - **Baidu**: `Baiduspider`.
+- **Begun**: `BegunAdvertising`.
 - **Bing**: `bingbot`, `msnbot`, `adidxbot`, `BingPreview`.
 - **Deuse**: `DeuSu`.
 - **Exalead**: `Exabot`.

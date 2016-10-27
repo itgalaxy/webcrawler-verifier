@@ -12,6 +12,7 @@ class WebcrawlerVerifier
     protected $webcrawlerVerifiers = [
         'Applebot' => 'WebcrawlerVerifier\Webcrawler\AppleWebcrawlerVerifier',
         'Baiduspider' => 'WebcrawlerVerifier\Webcrawler\BaiduWebcrawlerVerifier',
+        'BegunAdvertising' => 'WebcrawlerVerifier\Webcrawler\BegunWebcrawlerVerifier',
         'bingbot' => 'WebcrawlerVerifier\Webcrawler\BingWebcrawlerVerifier',
         'msnbot' => 'WebcrawlerVerifier\Webcrawler\BingWebcrawlerVerifier',
         'adidxbot' => 'WebcrawlerVerifier\Webcrawler\BingWebcrawlerVerifier',

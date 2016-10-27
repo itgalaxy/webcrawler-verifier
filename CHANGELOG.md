@@ -3,6 +3,7 @@
 - Added: `Range` helper.
 - Added: `Steeler` webcrawler verifier.
 - Added: `Twitter` webcrawler verifier.
+- Added: `Begun` webcrawler verifier.
 - Chore: refactoring.
 - Chore: integrate `coveralls.io` and add badge `Coverage Status`.
 - Chore: add badge `Dependency Status`.

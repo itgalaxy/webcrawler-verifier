@@ -1,8 +1,6 @@
 <?php
 namespace WebcrawlerVerifier\DNS;
 
-use WebcrawlerVerifier\Helper\StringHelper as StringHelper;
-
 class ReverseVerifier
 {
     public static function verify($ip, $allowedHostNames)
@@ -10,10 +8,6 @@ class ReverseVerifier
         $host = gethostbyaddr($ip);
         $ipAfterLookup = gethostbyname($host);
 
-        $hostIsValid = !!array_filter($allowedHostNames, function ($validHost) use ($host) {
-            return StringHelper::endsWith($validHost, $host) !== false;
-        });
-
-        return $hostIsValid && $ipAfterLookup === $ip;
+        return HostVerifier::verify($host, $allowedHostNames) && $ipAfterLookup === $ip;
     }
 }
