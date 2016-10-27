@@ -15,6 +15,6 @@ class GrapeshotWebcrawlerVerifier implements WebcrawlerVerifierInterface
      */
     public function verify($ip)
     {
-        return Range::inRange($this->allowedRanges, $ip);
+        return Range::inRange($ip, $this->allowedRanges);
     }
 }

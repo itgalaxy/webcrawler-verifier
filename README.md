@@ -94,6 +94,7 @@ if (!empty($_SERVER['HTTP_USER_AGENT']) && !empty($_SERVER['REMOTE_ADDR'])) {
 - **Grapeshot**: `GrapeshotCrawler`.
 - **Tiscali.it**: `istellabot`.
 - **Mail.ru**: `Mail.RU_Bot`, `Mail.RU`.
+- **Searchme**: `Wotbox`.
 - **Seznam.cz**: `SeznamBot`.
 - **Sputni**: `SputnikBot`.
 - **Steeler**: `Steeler`.

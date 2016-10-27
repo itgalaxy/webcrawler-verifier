@@ -240,6 +240,21 @@ class WebcrawlerVerifierTest extends TestCase
         ));
     }
 
+    public function testVerifySearchmeWebcrawler()
+    {
+        $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();
+        $userAgent = 'Wotbox/2.01 (+http://www.wotbox.com/bot/)';
+
+        $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
+            $userAgent,
+            '192.168.0.1'
+        ));
+        $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
+            $userAgent,
+            '94.199.151.22'
+        ));
+    }
+
     public function testVerifySeznamWebcrawler()
     {
         $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();

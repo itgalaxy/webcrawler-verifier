@@ -3,9 +3,9 @@ namespace WebcrawlerVerifier\Webcrawler;
 
 use WebcrawlerVerifier\Helper\Range;
 
-class SteelerWebcrawlerVerifier implements WebcrawlerVerifierInterface
+class SearchmeWebcrawlerVerifier implements WebcrawlerVerifierInterface
 {
-    protected $allowedRanges = ['157.82.156.129-157.82.156.254'];
+    protected $allowedRanges = ['94.199.151.22'];
 
     /**
      * Checks whether the given IP address really belongs to a valid host or not

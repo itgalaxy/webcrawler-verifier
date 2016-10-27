@@ -1,3 +1,8 @@
+# Head
+
+- Added: `Wotbox` webcrawler verifier.
+- Chore: refactoring `Range` helper. Use `ip` first, second `allowedRange`.
+
 # 1.2.0 - 2016-10-27
 
 - Added: `Range` helper.

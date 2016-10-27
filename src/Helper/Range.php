@@ -6,7 +6,7 @@ use IPTools\Range as IPToolsRange;
 
 class Range
 {
-    public static function inRange($ranges = [], $ip)
+    public static function inRange($ip, $ranges = [])
     {
         $verified = false;
 

@@ -24,6 +24,7 @@ class WebcrawlerVerifier
         'istellabot' => 'WebcrawlerVerifier\Webcrawler\IstellaWebcrawlerVerifier',
         'Mail.RU_Bot' => 'WebcrawlerVerifier\Webcrawler\MailRUWebcrawlerVerifier',
         'Mail.RU' => 'WebcrawlerVerifier\Webcrawler\MailRUWebcrawlerVerifier',
+        'Wotbox' => 'WebcrawlerVerifier\Webcrawler\SearchmeWebcrawlerVerifier',
         'Seznam' => 'WebcrawlerVerifier\Webcrawler\SeznamWebcrawlerVerifier',
         'SputnikBot' => 'WebcrawlerVerifier\Webcrawler\SputnikWebcrawlerVerifier',
         'Steeler' => 'WebcrawlerVerifier\Webcrawler\SteelerWebcrawlerVerifier',
