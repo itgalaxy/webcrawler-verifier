@@ -1,4 +1,4 @@
-# Head
+# 1.2.0 - 2016-10-27
 
 - Added: `Range` helper.
 - Added: `Steeler` webcrawler verifier.
