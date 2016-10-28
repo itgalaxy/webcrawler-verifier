@@ -1,9 +1,9 @@
 <?php
 namespace WebcrawlerVerifier\Webcrawler;
 
-use WebcrawlerVerifier\DNS\ReverseVerifier as ReverseVerifier;
+use WebcrawlerVerifier\DNS\HostVerifier;
 
-class SeznamWebcrawlerVerifier implements WebcrawlerVerifierInterface
+class SeznamCzASVerifier implements VerifierInterface
 {
     protected $allowedHostNames = ['seznam.cz'];
 
@@ -15,6 +15,6 @@ class SeznamWebcrawlerVerifier implements WebcrawlerVerifierInterface
      */
     public function verify($ip)
     {
-        return ReverseVerifier::verify($ip, $this->allowedHostNames);
+        return HostVerifier::verify(gethostbyaddr($ip), $this->allowedHostNames);
     }
 }

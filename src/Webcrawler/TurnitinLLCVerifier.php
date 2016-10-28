@@ -1,11 +1,15 @@
 <?php
 namespace WebcrawlerVerifier\Webcrawler;
 
-use WebcrawlerVerifier\DNS\ReverseVerifier as ReverseVerifier;
+use WebcrawlerVerifier\Helper\Range;
 
-class MailRUWebcrawlerVerifier implements WebcrawlerVerifierInterface
+class TurnitinLLCVerifier implements VerifierInterface
 {
-    protected $allowedHostNames = ['mail.ru'];
+    // https://www.turnitin.com/robot/crawlerinfo.html
+    protected $allowedRanges = [
+        '38.111.147.69-38.111.147.94',
+        '199.47.82.133-199.47.82.254'
+    ];
 
     /**
      * Checks whether the given IP address really belongs to a valid host or not
@@ -15,6 +19,6 @@ class MailRUWebcrawlerVerifier implements WebcrawlerVerifierInterface
      */
     public function verify($ip)
     {
-        return ReverseVerifier::verify($ip, $this->allowedHostNames);
+        return Range::inRange($ip, $this->allowedRanges);
     }
 }

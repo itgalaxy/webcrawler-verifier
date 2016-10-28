@@ -1,11 +1,11 @@
 <?php
 namespace WebcrawlerVerifier\Webcrawler;
 
-use WebcrawlerVerifier\DNS\ReverseVerifier as ReverseVerifier;
+use WebcrawlerVerifier\DNS\ReverseVerifier;
 
-class YandexWebcrawlerVerifier implements WebcrawlerVerifierInterface
+class YahooIncVerifier implements VerifierInterface
 {
-    protected $allowedHostNames = ['yandex.ru', 'yandex.net', 'yandex.com'];
+    protected $allowedHostNames = ['crawl.yahoo.net', 'yse.yahoo.net'];
 
     /**
      * Checks whether the given IP address really belongs to a valid host or not

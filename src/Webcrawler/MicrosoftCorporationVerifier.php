@@ -1,11 +1,11 @@
 <?php
 namespace WebcrawlerVerifier\Webcrawler;
 
-use WebcrawlerVerifier\DNS\ReverseVerifier as ReverseVerifier;
+use WebcrawlerVerifier\DNS\ReverseVerifier;
 
-class BaiduWebcrawlerVerifier implements WebcrawlerVerifierInterface
+class MicrosoftCorporationVerifier implements VerifierInterface
 {
-    protected $allowedHostNames = ['baidu.com', 'baidu.jp'];
+    protected $allowedHostNames = ['search.msn.com'];
 
     /**
      * Checks whether the given IP address really belongs to a valid host or not

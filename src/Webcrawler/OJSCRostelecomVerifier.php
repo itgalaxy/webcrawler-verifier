@@ -1,11 +1,11 @@
 <?php
 namespace WebcrawlerVerifier\Webcrawler;
 
-use WebcrawlerVerifier\Helper\Range;
+use WebcrawlerVerifier\DNS\ReverseVerifier;
 
-class SteelerWebcrawlerVerifier implements WebcrawlerVerifierInterface
+class OJSCRostelecomVerifier implements VerifierInterface
 {
-    protected $allowedRanges = ['157.82.156.129-157.82.156.254'];
+    protected $allowedHostNames = ['sputnik.ru'];
 
     /**
      * Checks whether the given IP address really belongs to a valid host or not
@@ -15,6 +15,6 @@ class SteelerWebcrawlerVerifier implements WebcrawlerVerifierInterface
      */
     public function verify($ip)
     {
-        return Range::inRange($ip, $this->allowedRanges);
+        return ReverseVerifier::verify($ip, $this->allowedHostNames);
     }
 }

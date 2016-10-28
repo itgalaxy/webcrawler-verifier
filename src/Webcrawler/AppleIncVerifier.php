@@ -1,11 +1,11 @@
 <?php
 namespace WebcrawlerVerifier\Webcrawler;
 
-use WebcrawlerVerifier\Helper\Range;
+use WebcrawlerVerifier\DNS\ReverseVerifier;
 
-class GrapeshotWebcrawlerVerifier implements WebcrawlerVerifierInterface
+class AppleIncVerifier implements VerifierInterface
 {
-    protected $allowedRanges = ['89.145.95.0/24'];
+    protected $allowedHostNames = ['apple.com'];
 
     /**
      * Checks whether the given IP address really belongs to a valid host or not
@@ -15,6 +15,6 @@ class GrapeshotWebcrawlerVerifier implements WebcrawlerVerifierInterface
      */
     public function verify($ip)
     {
-        return Range::inRange($ip, $this->allowedRanges);
+        return ReverseVerifier::verify($ip, $this->allowedHostNames);
     }
 }

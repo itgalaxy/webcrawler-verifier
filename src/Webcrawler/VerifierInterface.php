@@ -1,7 +1,7 @@
 <?php
 namespace WebcrawlerVerifier\Webcrawler;
 
-interface WebcrawlerVerifierInterface
+interface VerifierInterface
 {
     public function verify($ip);
 }

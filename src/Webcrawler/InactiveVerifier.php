@@ -1,12 +1,8 @@
 <?php
 namespace WebcrawlerVerifier\Webcrawler;
 
-use WebcrawlerVerifier\DNS\ReverseVerifier as ReverseVerifier;
-
-class IstellaWebcrawlerVerifier implements WebcrawlerVerifierInterface
+class InactiveVerifier implements VerifierInterface
 {
-    protected $allowedHostNames = ['istella.it'];
-
     /**
      * Checks whether the given IP address really belongs to a valid host or not
      *
@@ -15,6 +11,6 @@ class IstellaWebcrawlerVerifier implements WebcrawlerVerifierInterface
      */
     public function verify($ip)
     {
-        return ReverseVerifier::verify($ip, $this->allowedHostNames);
+        return false;
     }
 }

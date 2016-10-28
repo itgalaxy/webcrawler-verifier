@@ -1,11 +1,11 @@
 <?php
 namespace WebcrawlerVerifier\Webcrawler;
 
-use WebcrawlerVerifier\DNS\ReverseVerifier as ReverseVerifier;
+use WebcrawlerVerifier\DNS\ReverseVerifier;
 
-class BingWebcrawlerVerifier implements WebcrawlerVerifierInterface
+class MailRuGroupVerifier implements VerifierInterface
 {
-    protected $allowedHostNames = ['search.msn.com'];
+    protected $allowedHostNames = ['mail.ru'];
 
     /**
      * Checks whether the given IP address really belongs to a valid host or not

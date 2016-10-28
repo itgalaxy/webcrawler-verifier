@@ -3,7 +3,7 @@ namespace WebcrawlerVerifier\DNS;
 
 class ReverseVerifier
 {
-    public static function verify($ip, $allowedHostNames)
+    public static function verify($ip, array $allowedHostNames)
     {
         $host = gethostbyaddr($ip);
         $ipAfterLookup = gethostbyname($host);

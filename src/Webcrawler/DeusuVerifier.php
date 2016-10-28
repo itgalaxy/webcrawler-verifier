@@ -1,12 +1,11 @@
 <?php
 namespace WebcrawlerVerifier\Webcrawler;
 
-use WebcrawlerVerifier\Helper\Range;
+use WebcrawlerVerifier\DNS\ReverseVerifier;
 
-class TwitterWebcrawlerVerifier implements WebcrawlerVerifierInterface
+class DeusuVerifier implements VerifierInterface
 {
-    // https://dev.twitter.com/cards/troubleshooting
-    protected $allowedRanges = ['199.16.156.0/22', '199.59.148.0/22'];
+    protected $allowedHostNames = ['deusu.de', 'mschoebel.de'];
 
     /**
      * Checks whether the given IP address really belongs to a valid host or not
@@ -16,6 +15,6 @@ class TwitterWebcrawlerVerifier implements WebcrawlerVerifierInterface
      */
     public function verify($ip)
     {
-        return Range::inRange($ip, $this->allowedRanges);
+        return ReverseVerifier::verify($ip, $this->allowedHostNames);
     }
 }

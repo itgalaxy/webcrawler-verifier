@@ -1,11 +1,11 @@
 <?php
 namespace WebcrawlerVerifier\Webcrawler;
 
-use WebcrawlerVerifier\DNS\ReverseVerifier as ReverseVerifier;
+use WebcrawlerVerifier\Helper\Range;
 
-class ExaleadWebcrawlerVerifier implements WebcrawlerVerifierInterface
+class WotboxTeamVerifier implements VerifierInterface
 {
-    protected $allowedHostNames = ['exabot.com'];
+    protected $allowedRanges = ['94.199.151.22'];
 
     /**
      * Checks whether the given IP address really belongs to a valid host or not
@@ -15,6 +15,6 @@ class ExaleadWebcrawlerVerifier implements WebcrawlerVerifierInterface
      */
     public function verify($ip)
     {
-        return ReverseVerifier::verify($ip, $this->allowedHostNames);
+        return Range::inRange($ip, $this->allowedRanges);
     }
 }

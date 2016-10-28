@@ -1,7 +1,15 @@
-# Head
+# 2.0.0 - 2016-10-28
 
-- Added: `Wotbox` webcrawler verifier.
+- Added: `Odnoklassniki LLC` webcrawler verifier.
+- Added: `Turnitin LLC` webcrawler verifier.
+- Added: `Wotbox Team` webcrawler verifier.
+- Added: `Validator.w3.org` webcraler verifiers.
+- Added: `IBM Germany Research And Development GmbH` webcrawler verifier.
+- Added: `InactiveVerifier` for inactive webcrawlers.
+- Changed: rename all verifier by official company name.
+- Changed: remove suffix `Webcrawler` from all webcrawler verifiers.
 - Chore: refactoring `Range` helper. Use `ip` first, second `allowedRange`.
+- Fixed: best signature for `User-agent` webcrawlers.
 
 # 1.2.0 - 2016-10-27
 

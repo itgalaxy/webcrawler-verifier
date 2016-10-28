@@ -1,11 +1,11 @@
 <?php
 namespace WebcrawlerVerifier\Webcrawler;
 
-use WebcrawlerVerifier\DNS\ReverseVerifier as ReverseVerifier;
+use WebcrawlerVerifier\DNS\HostVerifier;
 
-class DeusuWebcrawlerVerifier implements WebcrawlerVerifierInterface
+class BegunVerifier implements VerifierInterface
 {
-    protected $allowedHostNames = ['deusu.de', 'mschoebel.de'];
+    protected $allowedHostNames = ['begun.ru'];
 
     /**
      * Checks whether the given IP address really belongs to a valid host or not
@@ -15,6 +15,6 @@ class DeusuWebcrawlerVerifier implements WebcrawlerVerifierInterface
      */
     public function verify($ip)
     {
-        return ReverseVerifier::verify($ip, $this->allowedHostNames);
+        return HostVerifier::verify(gethostbyaddr($ip), $this->allowedHostNames);
     }
 }

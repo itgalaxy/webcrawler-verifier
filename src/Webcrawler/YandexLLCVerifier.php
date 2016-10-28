@@ -1,11 +1,11 @@
 <?php
 namespace WebcrawlerVerifier\Webcrawler;
 
-use WebcrawlerVerifier\Helper\Range;
+use WebcrawlerVerifier\DNS\ReverseVerifier;
 
-class SearchmeWebcrawlerVerifier implements WebcrawlerVerifierInterface
+class YandexLLCVerifier implements VerifierInterface
 {
-    protected $allowedRanges = ['94.199.151.22'];
+    protected $allowedHostNames = ['yandex.ru', 'yandex.net', 'yandex.com'];
 
     /**
      * Checks whether the given IP address really belongs to a valid host or not
@@ -15,6 +15,6 @@ class SearchmeWebcrawlerVerifier implements WebcrawlerVerifierInterface
      */
     public function verify($ip)
     {
-        return Range::inRange($ip, $this->allowedRanges);
+        return ReverseVerifier::verify($ip, $this->allowedHostNames);
     }
 }

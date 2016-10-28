@@ -1,11 +1,11 @@
 <?php
 namespace WebcrawlerVerifier\Webcrawler;
 
-use WebcrawlerVerifier\DNS\ReverseVerifier as ReverseVerifier;
+use WebcrawlerVerifier\DNS\ReverseVerifier;
 
-class YahooWebcrawlerVerifier implements WebcrawlerVerifierInterface
+class TiscaliItaliaSpaVerifier implements VerifierInterface
 {
-    protected $allowedHostNames = ['crawl.yahoo.net', 'yse.yahoo.net'];
+    protected $allowedHostNames = ['istella.it'];
 
     /**
      * Checks whether the given IP address really belongs to a valid host or not

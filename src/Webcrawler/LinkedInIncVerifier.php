@@ -1,11 +1,11 @@
 <?php
 namespace WebcrawlerVerifier\Webcrawler;
 
-use WebcrawlerVerifier\DNS\ReverseVerifier as ReverseVerifier;
+use WebcrawlerVerifier\DNS\ReverseVerifier;
 
-class AppleWebcrawlerVerifier implements WebcrawlerVerifierInterface
+class LinkedInIncVerifier implements VerifierInterface
 {
-    protected $allowedHostNames = ['apple.com'];
+    protected $allowedHostNames = ['linkedin.com'];
 
     /**
      * Checks whether the given IP address really belongs to a valid host or not

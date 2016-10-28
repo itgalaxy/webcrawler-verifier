@@ -1,11 +1,11 @@
 <?php
 namespace WebcrawlerVerifier\Webcrawler;
 
-use WebcrawlerVerifier\DNS\HostVerifier;
+use WebcrawlerVerifier\Helper\Range;
 
-class BegunWebcrawlerVerifier implements WebcrawlerVerifierInterface
+class ValidatorW3OrgVerifier implements VerifierInterface
 {
-    protected $allowedHostNames = ['begun.ru'];
+    protected $allowedRanges = ['128.30.52.0/24'];
 
     /**
      * Checks whether the given IP address really belongs to a valid host or not
@@ -15,6 +15,6 @@ class BegunWebcrawlerVerifier implements WebcrawlerVerifierInterface
      */
     public function verify($ip)
     {
-        return HostVerifier::verify(gethostbyaddr($ip), $this->allowedHostNames);
+        return Range::inRange($ip, $this->allowedRanges);
     }
 }
