@@ -1,3 +1,18 @@
+# 2.1.0 - 2016-10-30
+
+- Added: `YandexAccessibilityBot` webcrawler verifier.
+- Added: `YandexScreenshotBot` webcrawler verifier.
+- Added: `YandexSearchShop` webcrawler verifier.
+- Added: `YandexSpravBot` webcrawler verifier.
+- Added: `YandexForDomain` webcrawler verifier.
+- Added: `YandexVertis` webcrawler verifier.
+- Added: `YandexMarket` webcrawler verifier.
+- Added: `YandexSitelinks` webcrawler verifier.
+- Added: `YandexCalendar` webcrawler verifier.
+- Added: `YandexAdNet` webcrawler verifier.
+- Added: `YandexNews` webcrawler verifier.
+- Added: `Mediapartners(Googlebot)` webcrawler verifier.
+
 # 2.0.0 - 2016-10-28
 
 - Added: `Odnoklassniki LLC` webcrawler verifier.

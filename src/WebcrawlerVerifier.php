@@ -11,6 +11,7 @@ class WebcrawlerVerifier
 
     protected $webcrawlerVerifiers = [
         'adidxbot' => 'WebcrawlerVerifier\Webcrawler\MicrosoftCorporationVerifier',
+        // Also `AdsBot-Google-Mobile-Apps`
         'AdsBot-Google' => 'WebcrawlerVerifier\Webcrawler\GoogleIncVerifier',
         'Applebot' => 'WebcrawlerVerifier\Webcrawler\AppleIncVerifier',
         'AppleNewsBot' => 'WebcrawlerVerifier\Webcrawler\InactiveVerifier',
@@ -31,6 +32,7 @@ class WebcrawlerVerifier
         'Google Web Preview' => 'WebcrawlerVerifier\Webcrawler\GoogleIncVerifier',
         'Google_Analytics_Snippet_Validator' => 'WebcrawlerVerifier\Webcrawler\GoogleIncVerifier',
         'Google-Adwords' => 'WebcrawlerVerifier\Webcrawler\GoogleIncVerifier',
+        // Also `Googlebot-News`, `Googlebot-Image`, `Googlebot-Video`, `Googlebot-Mobile`
         'Googlebot' => 'WebcrawlerVerifier\Webcrawler\GoogleIncVerifier',
         'Google-Calendar-Importer' => 'WebcrawlerVerifier\Webcrawler\GoogleIncVerifier',
         'Google-Publisher-Plugin' => 'WebcrawlerVerifier\Webcrawler\GoogleIncVerifier',
@@ -48,6 +50,7 @@ class WebcrawlerVerifier
         'Mail.RU/' => 'WebcrawlerVerifier\Webcrawler\MailRuGroupVerifier',
         'Mail.RU_Bot' => 'WebcrawlerVerifier\Webcrawler\MailRuGroupVerifier',
         'Mediapartners-Google' => 'WebcrawlerVerifier\Webcrawler\GoogleIncVerifier',
+        'Mediapartners(Googlebot)' => 'WebcrawlerVerifier\Webcrawler\GoogleIncVerifier',
         'msnbot' => 'WebcrawlerVerifier\Webcrawler\MicrosoftCorporationVerifier',
         'MSRBOT' => 'WebcrawlerVerifier\Webcrawler\InactiveVerifier',
         'NING/' => 'WebcrawlerVerifier\Webcrawler\ValidatorW3OrgVerifier',
@@ -82,19 +85,34 @@ class WebcrawlerVerifier
         'YahooYSMcm' => 'WebcrawlerVerifier\Webcrawler\YahooIncVerifier',
         'Yandex.Translate' => 'WebcrawlerVerifier\Webcrawler\YandexLLCVerifier',
         'Yandex/' => 'WebcrawlerVerifier\Webcrawler\YandexLLCVerifier',
+        'YandexAccessibilityBot' => 'WebcrawlerVerifier\Webcrawler\YandexLLCVerifier',
+        'YandexAdNet' => 'WebcrawlerVerifier\Webcrawler\YandexLLCVerifier',
         'YandexAntivirus' => 'WebcrawlerVerifier\Webcrawler\YandexLLCVerifier',
         'YandexBlogs' => 'WebcrawlerVerifier\Webcrawler\YandexLLCVerifier',
         'YandexBot' => 'WebcrawlerVerifier\Webcrawler\YandexLLCVerifier',
+        'YandexCalendar' => 'WebcrawlerVerifier\Webcrawler\YandexLLCVerifier',
         'YandexCatalog' => 'WebcrawlerVerifier\Webcrawler\YandexLLCVerifier',
+        // Also `YandexDirectDyn`
         'YandexDirect' => 'WebcrawlerVerifier\Webcrawler\YandexLLCVerifier',
         'YandexFavicons' => 'WebcrawlerVerifier\Webcrawler\YandexLLCVerifier',
+        'YandexForDomain' => 'WebcrawlerVerifier\Webcrawler\YandexLLCVerifier',
+        'YandexVertis' => 'WebcrawlerVerifier\Webcrawler\YandexLLCVerifier',
         'YandexImageResizer' => 'WebcrawlerVerifier\Webcrawler\YandexLLCVerifier',
         'YandexImages' => 'WebcrawlerVerifier\Webcrawler\YandexLLCVerifier',
+        'YandexMarket' => 'WebcrawlerVerifier\Webcrawler\YandexLLCVerifier',
+        // Also `YandexMedianaBot`,
         'YandexMedia' => 'WebcrawlerVerifier\Webcrawler\YandexLLCVerifier',
         'YandexMetrika' => 'WebcrawlerVerifier\Webcrawler\YandexLLCVerifier',
         'YandexMobileBot' => 'WebcrawlerVerifier\Webcrawler\YandexLLCVerifier',
+        // Also `YandexNewslinks`
+        'YandexNews' => 'WebcrawlerVerifier\Webcrawler\YandexLLCVerifier',
         'YandexPagechecker' => 'WebcrawlerVerifier\Webcrawler\YandexLLCVerifier',
+        'YandexScreenshotBot' => 'WebcrawlerVerifier\Webcrawler\YandexLLCVerifier',
         'YandexSomething' => 'WebcrawlerVerifier\Webcrawler\YandexLLCVerifier',
+        'YandexSearchShop' => 'WebcrawlerVerifier\Webcrawler\YandexLLCVerifier',
+        'YandexSpravBot' => 'WebcrawlerVerifier\Webcrawler\YandexLLCVerifier',
+        'YandexSitelinks' => 'WebcrawlerVerifier\Webcrawler\YandexLLCVerifier',
+        // Also `YandexVideoParser`
         'YandexVideo' => 'WebcrawlerVerifier\Webcrawler\YandexLLCVerifier',
         'YandexWebmaster' => 'WebcrawlerVerifier\Webcrawler\YandexLLCVerifier',
         'YandexZakladki' => 'WebcrawlerVerifier\Webcrawler\YandexLLCVerifier'

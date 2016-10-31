@@ -108,7 +108,8 @@ class WebcrawlerVerifierTest extends TestCase
                 . 'Version/9.0 Mobile/13B143 Safari/601.1 (compatible; '
                 . 'AdsBot-Google-Mobile; +http://www.google.com/mobile/adsbot.html)' => '66.249.89.17',
             'AdsBot-Google-Mobile (+http://www.google.com/mobile/adsbot.html) Mozilla (iPhone; U; CPU iPhone OS 3 0'
-                . ' like Mac OS X) AppleWebKit (KHTML, like Gecko) Mobile Safari' => '66.249.91.5'
+                . ' like Mac OS X) AppleWebKit (KHTML, like Gecko) Mobile Safari' => '66.249.91.5',
+            'AdsBot-Google-Mobile-Apps' => '66.249.89.15',
         ];
 
         foreach ($userAgents as $userAgent => $ip) {
@@ -529,10 +530,11 @@ class WebcrawlerVerifierTest extends TestCase
         $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();
         $userAgents = [
             'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)' => '66.249.66.96',
+            'Googlebot/2.1 (+http://www.google.com/bot.html)' => '66.249.66.96',
+            'Googlebot-News' => '66.249.66.96',
             'Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko)'
                 . ' Chrome/41.0.2272.96 Mobile Safari/537.36 (compatible; Googlebot/2.1;'
                 . ' +http://www.google.com/bot.html)' => '66.249.64.37',
-            'Googlebot/2.1 (+http://www.google.com/bot.html)' => '66.249.64.34',
             'DoCoMo/2.0 N905i(c100;TB;W24H16) (compatible; Googlebot-Mobile/2.1; +http://www.google.com/bot.html)'
                 => '66.249.64.185',
             'Googlebot-Image/1.0' => '66.249.64.26',
@@ -564,7 +566,12 @@ class WebcrawlerVerifierTest extends TestCase
                 . ' Mobile/10A5376e Safari/8536.25 (compatible; Googlebot-Mobile/2.1;'
                 . ' +http://www.google.com/bot.html)' => '66.249.75.98',
             'Nokia6820/2.0 (4.83) Profile/MIDP-1.0 Configuration/CLDC-1.0 (compatible; Googlebot-Mobile/2.1;'
-                . ' +http://www.google.com/bot.html)' => '66.249.72.68'
+                . ' +http://www.google.com/bot.html)' => '66.249.72.68',
+            'SAMSUNG-SGH-E250/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI)'
+                . ' MMP/2.0 (compatible; Googlebot-Mobile/2.1;'
+                . ' +http://www.google.com/bot.html)' => '66.249.64.37',
+            'DoCoMo/2.0 N905i(c100;TB;W24H16) (compatible; Googlebot-Mobile/2.1;'
+                . ' +http://www.google.com/bot.html)' => '66.249.64.37'
         ];
 
         foreach ($userAgents as $userAgent => $ip) {
@@ -848,7 +855,8 @@ class WebcrawlerVerifierTest extends TestCase
             'Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_1 like Mac OS X; en-us) AppleWebKit/532.9 (KHTML, like Gecko)'
                 . ' Version/4.0.5 Mobile/8B117 Safari/6531.22.7 (compatible; Mediapartners-Google/2.1;'
                 . ' +http://www.google.com/bot.html)' => '66.249.75.96',
-            'Mediapartners-Google' => '66.249.76.70'
+            'Mediapartners-Google' => '66.249.76.70',
+            'Mediapartners(Googlebot)' => '66.249.76.70'
         ];
 
         foreach ($userAgents as $userAgent => $ip) {
@@ -1474,6 +1482,36 @@ class WebcrawlerVerifierTest extends TestCase
         }
     }
 
+    public function testVerifyYandexAccessibilityBotWebcrawler()
+    {
+        $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();
+        $userAgent = 'Mozilla/5.0 (compatible; YandexAccessibilityBot/3.0; +http://yandex.com/bots)';
+
+        $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
+            $userAgent,
+            '192.168.0.1'
+        ));
+        $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
+            $userAgent,
+            '37.9.102.123'
+        ));
+    }
+
+    public function testVerifyYandexAdNetWebcrawler()
+    {
+        $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();
+        $userAgent = 'Mozilla/5.0 (compatible; YandexAdNet/1.0; +http://yandex.com/bots)';
+
+        $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
+            $userAgent,
+            '192.168.0.1'
+        ));
+        $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
+            $userAgent,
+            '37.9.102.123'
+        ));
+    }
+
     public function testVerifyYandexAntivirusWebcrawler()
     {
         $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();
@@ -1524,6 +1562,21 @@ class WebcrawlerVerifierTest extends TestCase
         }
     }
 
+    public function testVerifyYandexCalendarWebcrawler()
+    {
+        $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();
+        $userAgent = 'Mozilla/5.0 (compatible; YandexCalendar/1.0; +http://yandex.com/bots)';
+
+        $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
+            $userAgent,
+            '192.168.0.1'
+        ));
+        $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
+            $userAgent,
+            '141.8.132.83'
+        ));
+    }
+
     public function testVerifyYandexCatalogWebcrawler()
     {
         $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();
@@ -1542,16 +1595,21 @@ class WebcrawlerVerifierTest extends TestCase
     public function testVerifyYandexDirectWebcrawler()
     {
         $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();
-        $userAgent = 'Mozilla/5.0 (compatible; YandexDirect/3.0; +http://yandex.com/bots)';
+        $userAgents = [
+            'Mozilla/5.0 (compatible; YandexDirect/3.0; +http://yandex.com/bots)' => '213.180.206.205',
+            'Mozilla/5.0 (compatible; YandexDirectDyn/1.0; +http://yandex.com/bots)' => '213.180.206.205'
+        ];
 
-        $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
-            $userAgent,
-            '192.168.0.1'
-        ));
-        $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
-            $userAgent,
-            '213.180.206.205'
-        ));
+        foreach ($userAgents as $userAgent => $ip) {
+            $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
+                $userAgent,
+                '192.168.0.1'
+            ));
+            $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
+                $userAgent,
+                $ip
+            ));
+        }
     }
 
     public function testVerifyYandexFaviconsWebcrawler()
@@ -1566,6 +1624,36 @@ class WebcrawlerVerifierTest extends TestCase
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
             '37.9.84.253'
+        ));
+    }
+
+    public function testVerifyYandexForDomainWebcrawler()
+    {
+        $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();
+        $userAgent = 'Mozilla/5.0 (compatible; YandexForDomain/1.0; +http://yandex.com/bots)';
+
+        $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
+            $userAgent,
+            '192.168.0.1'
+        ));
+        $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
+            $userAgent,
+            '87.250.253.69'
+        ));
+    }
+
+    public function testVerifyYandexVertisWebcrawler()
+    {
+        $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();
+        $userAgent = 'Mozilla/5.0 (compatible; YandexVertis/3.0; +http://yandex.com/bots)';
+
+        $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
+            $userAgent,
+            '192.168.0.1'
+        ));
+        $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
+            $userAgent,
+            '87.250.253.69'
         ));
     }
 
@@ -1599,10 +1687,10 @@ class WebcrawlerVerifierTest extends TestCase
         ));
     }
 
-    public function testVerifyYandexMediaWebcrawler()
+    public function testVerifyYandexMarketWebcrawler()
     {
         $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();
-        $userAgent = 'Mozilla/5.0 (compatible; YandexMedia/3.0; +http://yandex.com/bots)';
+        $userAgent = 'Mozilla/5.0 (compatible; YandexMarket/1.0; +http://yandex.com/bots)';
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
@@ -1610,8 +1698,31 @@ class WebcrawlerVerifierTest extends TestCase
         ));
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
-            '5.255.253.2'
+            '130.193.50.2'
         ));
+    }
+
+
+    public function testVerifyYandexMediaWebcrawler()
+    {
+        $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();
+        $userAgents = [
+            'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36'
+                . ' (compatible; YandexMedianaBot/1.0;'
+                . ' +http://yandex.com/bots)' => '5.255.253.2',
+            'Mozilla/5.0 (compatible; YandexMedia/3.0; +http://yandex.com/bots)' => '5.255.253.2'
+        ];
+
+        foreach ($userAgents as $userAgent => $ip) {
+            $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
+                $userAgent,
+                '192.168.0.1'
+            ));
+            $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
+                $userAgent,
+                $ip
+            ));
+        }
     }
 
     public function testVerifyYandexMetrikaWebcrawler()
@@ -1644,6 +1755,7 @@ class WebcrawlerVerifierTest extends TestCase
 
     public function testVerifyYandexMobileBotWebcrawler()
     {
+
         $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();
         $userAgent = 'Mozilla/5.0 (iPhone; CPU iPhone OS 8_1 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko)'
             . ' Version/8.0 Mobile/12B411 Safari/600.1.4 (compatible; YandexMobileBot/3.0; +http://yandex.com/bots)';
@@ -1658,10 +1770,30 @@ class WebcrawlerVerifierTest extends TestCase
         ));
     }
 
+    public function testVerifyYandexNewsWebcrawler()
+    {
+        $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();
+        $userAgents = [
+            'Mozilla/5.0 (compatible; YandexNews/3.0; +http://yandex.com/bots)' => '37.9.122.201',
+            'Mozilla/5.0 (compatible; YandexNewslinks; +http://yandex.com/bots)' => '37.9.122.201'
+        ];
+
+        foreach ($userAgents as $userAgent => $ip) {
+            $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
+                $userAgent,
+                '192.168.0.1'
+            ));
+            $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
+                $userAgent,
+                $ip
+            ));
+        }
+    }
+
     public function testVerifyYandexPagecheckerWebcrawler()
     {
         $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();
-        $userAgent = 'YandexSomething/1.0';
+        $userAgent = 'Mozilla/5.0 (compatible; YandexPagechecker/1.0; +http://yandex.com/bots)';
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
@@ -1670,6 +1802,22 @@ class WebcrawlerVerifierTest extends TestCase
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
             '5.255.253.2'
+        ));
+    }
+
+    public function testVerifyYandexScreenshotBotWebcrawler()
+    {
+        $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();
+        $userAgent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko)'
+            . ' Chrome/41.0.2228.0 Safari/537.36 (compatible; YandexScreenshotBot/3.0; +http://yandex.com/bots)';
+
+        $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
+            $userAgent,
+            '192.168.0.1'
+        ));
+        $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
+            $userAgent,
+            '37.9.122.202'
         ));
     }
 
@@ -1688,10 +1836,10 @@ class WebcrawlerVerifierTest extends TestCase
         ));
     }
 
-    public function testVerifyYandexVideoWebcrawler()
+    public function testVerifyYandexSearchShopWebcrawler()
     {
         $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();
-        $userAgent = 'Mozilla/5.0 (compatible; YandexVideo/3.0; +http://yandex.com/bots)';
+        $userAgent = 'Mozilla/5.0 (compatible; YandexSearchShop/1.0; +http://yandex.com/bots)';
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
@@ -1699,8 +1847,58 @@ class WebcrawlerVerifierTest extends TestCase
         ));
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
-            '141.8.142.60'
+            '37.9.122.202'
         ));
+    }
+
+    public function testVerifyYandexSpravBotWebcrawler()
+    {
+        $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();
+        $userAgent = 'Mozilla/5.0 (compatible; YandexSpravBot/1.0; +http://yandex.com/bots)';
+
+        $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
+            $userAgent,
+            '192.168.0.1'
+        ));
+        $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
+            $userAgent,
+            '37.9.122.202'
+        ));
+    }
+
+    public function testVerifyYandexSitelinksWebcrawler()
+    {
+        $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();
+        $userAgent = 'Mozilla/5.0 (compatible; YandexSitelinks; Dyatel; +http://yandex.com/bots)';
+
+        $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
+            $userAgent,
+            '192.168.0.1'
+        ));
+        $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
+            $userAgent,
+            '37.9.122.202'
+        ));
+    }
+
+    public function testVerifyYandexVideoWebcrawler()
+    {
+        $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();
+        $userAgents = [
+            'Mozilla/5.0 (compatible; YandexVideo/3.0; +http://yandex.com/bots)' => '141.8.142.60',
+            'Mozilla/5.0 (compatible; YandexVideoParser/1.0; +http://yandex.com/bots)' => '141.8.142.60'
+        ];
+
+        foreach ($userAgents as $userAgent => $ip) {
+            $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
+                $userAgent,
+                '192.168.0.1'
+            ));
+            $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
+                $userAgent,
+                $ip
+            ));
+        }
     }
 
     public function testVerifyYandexWebmasterWebcrawler()
