@@ -124,6 +124,21 @@ class WebcrawlerVerifierTest extends TestCase
         }
     }
 
+    public function testVerifyAdxPsfFetcherGoogleWebcrawlerVerifier()
+    {
+        $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();
+        $userAgent = 'AdxPsfFetcher-Google';
+
+        $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
+            $userAgent,
+            '192.168.0.1'
+        ));
+        $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
+            $userAgent,
+            '66.249.90.86'
+        ));
+    }
+
     public function testVerifyApplebotWebcrawler()
     {
         $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();

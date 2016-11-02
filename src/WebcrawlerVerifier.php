@@ -13,6 +13,7 @@ class WebcrawlerVerifier
         'adidxbot' => 'WebcrawlerVerifier\Webcrawler\MicrosoftCorporationVerifier',
         // Also `AdsBot-Google-Mobile-Apps`
         'AdsBot-Google' => 'WebcrawlerVerifier\Webcrawler\GoogleIncVerifier',
+        'AdxPsfFetcher-Google' => 'WebcrawlerVerifier\Webcrawler\GoogleIncVerifier',
         'Applebot' => 'WebcrawlerVerifier\Webcrawler\AppleIncVerifier',
         'AppleNewsBot' => 'WebcrawlerVerifier\Webcrawler\InactiveVerifier',
         'Baiduspider' => 'WebcrawlerVerifier\Webcrawler\BaiduVerifier',

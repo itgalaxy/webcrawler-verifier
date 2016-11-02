@@ -1,5 +1,6 @@
 # Head
 
+- Added: `AdxPsfFetcher-Google` webcrawler verifier.
 - Added: `Mojeek Ltd.` webcrawler verifier.
 - Chore: improve `README.md`.
 
