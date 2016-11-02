@@ -84,23 +84,34 @@ if (!empty($_SERVER['HTTP_USER_AGENT']) && !empty($_SERVER['REMOTE_ADDR'])) {
 
 ## Built in crawler detection
 
-- **Apple**: `Applebot`.
-- **Baidu**: `Baiduspider`.
-- **Begun**: `BegunAdvertising`.
-- **Bing**: `bingbot`, `msnbot`, `adidxbot`, `BingPreview`.
-- **Deuse**: `DeuSu`.
-- **Exalead**: `Exabot`.
-- **Google**: `Googlebot`.
-- **Grapeshot**: `GrapeshotCrawler`.
-- **Tiscali.it**: `istellabot`.
-- **Mail.ru**: `Mail.RU_Bot`, `Mail.RU`.
-- **Searchme**: `Wotbox`.
-- **Seznam.cz**: `SeznamBot`.
-- **Sputni**: `SputnikBot`.
-- **Steeler**: `Steeler`.
-- **Twitter**: `Twitterbot`.
-- **Yahoo**: `Yahoo! Slurp`.
-- **Yandex**: `Yandexbot`, `YaDirectFetcher`.
+### By company
+
+- [Apple Inc.](https://www.apple.com/)
+- [Baidu](http://www.baidu.com/)
+- [Begun](http://begun.ru/).
+- [Dassault Systèmes](http://www.3ds.com/)
+- [Michael Schöbel](https://geekregator.com/)
+- [Google Inc.](https://www.google.com/about/company/)
+- [Grapeshot Limited](https://www.grapeshot.com/)
+- [IBM Germany Research & Development GmbH](http://www.ibm.com/ibm/de/de/)
+- [Kitsuregawa Laboratory, The University of Tokyo External link](http://www.tkl.iis.u-tokyo.ac.jp/top/)
+- [LinkedIn Inc.](https://www.linkedin.com/)
+- [Mail.Ru Group](https://corp.mail.ru/)
+- [Microsoft Corporation](https://www.microsoft.com/about/)
+- [Mojeek Ltd.](https://www.mojeek.com/)
+- [Odnoklassniki LLC](https://ok.ru/)
+- [OJSC Rostelecom](http://www.rostelecom.ru/en/about/info/)
+- [Seznam.cz, a.s.](https://onas.seznam.cz/cz/)
+- [Turnitin, LLC](http://www.turnitin.com/)
+- [Twitter, Inc.](https://about.twitter.com/en/company)
+- [W3C](https://www.w3.org/)
+- [Wotbox Team](http://www.wotbox.com/)
+- [Yahoo! Inc.](https://www.yahoo.com/)
+- [Yandex LLC](https://yandex.com/company/)
+
+### By webcrawler name
+
+- Coming soon
 
 Contributions are welcome.
 

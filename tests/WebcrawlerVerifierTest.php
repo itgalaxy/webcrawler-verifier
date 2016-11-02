@@ -871,6 +871,21 @@ class WebcrawlerVerifierTest extends TestCase
         }
     }
 
+    public function testVerifyMojeekLtdWebcrawlerVerifier()
+    {
+        $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();
+        $userAgent = 'Mozilla/5.0 (compatible; MojeekBot/0.6; +https://www.mojeek.com/bot.html)';
+
+        $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
+            $userAgent,
+            '192.168.0.1'
+        ));
+        $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
+            $userAgent,
+            '5.102.173.71'
+        ));
+    }
+
     public function testVerifyMsnbotWebcrawler()
     {
         $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();
@@ -912,21 +927,6 @@ class WebcrawlerVerifierTest extends TestCase
     public function testVerifySputnikImageBotWebcrawler()
     {
         $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();
-        $userAgent = 'NING/1.0';
-
-        $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
-            $userAgent,
-            '192.168.0.1'
-        ));
-        $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
-            $userAgent,
-            '128.30.52.55'
-        ));
-    }
-
-    public function testVerifyNINGWebcrawler()
-    {
-        $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();
         $userAgent = 'Mozilla/5.0 (compatible; SputnikImageBot/2.3; +http://corp.sputnik.ru/webmaster)';
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
@@ -936,6 +936,21 @@ class WebcrawlerVerifierTest extends TestCase
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
             '5.143.231.137'
+        ));
+    }
+
+    public function testVerifyNINGWebcrawler()
+    {
+        $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();
+        $userAgent = 'NING/1.0';
+
+        $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
+            $userAgent,
+            '192.168.0.1'
+        ));
+        $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
+            $userAgent,
+            '128.30.52.55'
         ));
     }
 
@@ -985,7 +1000,7 @@ class WebcrawlerVerifierTest extends TestCase
             'Mozilla/5.0 (compatible; SeznamBot/3.2-test1; +http://napoveda.seznam.cz/en/seznambot-intro/)'
                 => '2a02:598:111::9',
             'Seznam-Zbozi-robot/3.0'
-                => '77.75.77.24',
+                => '77.75.74.87',
             'Mozilla/5.0 (compatible; SeznamBot/3.2-test4; +http://napoveda.seznam.cz/en/seznambot-intro/)'
                 => '77.75.74.87',
             'Mozilla/5.0 PhantomJS (compatible; Seznam screenshot-generator 2.1; +http://fulltext.sblog.cz/screenshot/)'

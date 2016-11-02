@@ -51,6 +51,7 @@ class WebcrawlerVerifier
         'Mail.RU_Bot' => 'WebcrawlerVerifier\Webcrawler\MailRuGroupVerifier',
         'Mediapartners-Google' => 'WebcrawlerVerifier\Webcrawler\GoogleIncVerifier',
         'Mediapartners(Googlebot)' => 'WebcrawlerVerifier\Webcrawler\GoogleIncVerifier',
+        'MojeekBot' => 'WebcrawlerVerifier\Webcrawler\MojeekLtdWebcrawlerVerifier',
         'msnbot' => 'WebcrawlerVerifier\Webcrawler\MicrosoftCorporationVerifier',
         'MSRBOT' => 'WebcrawlerVerifier\Webcrawler\InactiveVerifier',
         'NING/' => 'WebcrawlerVerifier\Webcrawler\ValidatorW3OrgVerifier',

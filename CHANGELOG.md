@@ -1,3 +1,8 @@
+# Head
+
+- Added: `Mojeek Ltd.` webcrawler verifier.
+- Chore: improve `README.md`.
+
 # 2.1.0 - 2016-10-30
 
 - Added: `YandexAccessibilityBot` webcrawler verifier.
