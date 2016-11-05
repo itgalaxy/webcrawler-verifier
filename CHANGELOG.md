@@ -2,6 +2,7 @@
 
 - Added: `AdxPsfFetcher-Google` webcrawler verifier.
 - Added: `Mojeek Ltd.` webcrawler verifier.
+- Added: `YandexAddURL` webcrawler verifier.
 - Chore: improve `README.md`.
 
 # 2.1.0 - 2016-10-30

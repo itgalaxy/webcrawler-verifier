@@ -89,6 +89,7 @@ class WebcrawlerVerifier
         'Yandex/' => 'WebcrawlerVerifier\Webcrawler\YandexLLCVerifier',
         'YandexAccessibilityBot' => 'WebcrawlerVerifier\Webcrawler\YandexLLCVerifier',
         'YandexAdNet' => 'WebcrawlerVerifier\Webcrawler\YandexLLCVerifier',
+        'YandexAddURL' => 'WebcrawlerVerifier\Webcrawler\YandexLLCVerifier',
         'YandexAntivirus' => 'WebcrawlerVerifier\Webcrawler\YandexLLCVerifier',
         'YandexBlogs' => 'WebcrawlerVerifier\Webcrawler\YandexLLCVerifier',
         'YandexBot' => 'WebcrawlerVerifier\Webcrawler\YandexLLCVerifier',

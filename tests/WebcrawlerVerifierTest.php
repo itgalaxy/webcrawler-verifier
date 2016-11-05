@@ -1542,6 +1542,21 @@ class WebcrawlerVerifierTest extends TestCase
         ));
     }
 
+    public function testVerifyYandexAddURLWebcrawler()
+    {
+        $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();
+        $userAgent = 'Mozilla/5.0 (compatible; YandexAddurl/2.0)';
+
+        $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
+            $userAgent,
+            '192.168.0.1'
+        ));
+        $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
+            $userAgent,
+            '37.9.102.123'
+        ));
+    }
+
     public function testVerifyYandexAntivirusWebcrawler()
     {
         $webcrawlerVerifier = new \WebcrawlerVerifier\WebcrawlerVerifier();
