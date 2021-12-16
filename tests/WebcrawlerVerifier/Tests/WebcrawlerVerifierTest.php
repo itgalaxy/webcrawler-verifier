@@ -17,7 +17,7 @@ class WebcrawlerVerifierTest extends TestCase
 
         $this->assertEquals($webcrawlerVerifier::UNKNOWN, $webcrawlerVerifier->verify(
             $userAgent,
-            '192.168.0.1'
+            '127.0.0.1'
         ));
     }
 
@@ -40,7 +40,7 @@ class WebcrawlerVerifierTest extends TestCase
 
         $this->assertEquals($webcrawlerVerifier::UNKNOWN, $webcrawlerVerifier->verify(
             $userAgent,
-            '192.168.0.1'
+            '127.0.0.1'
         ));
     }
 
@@ -49,20 +49,20 @@ class WebcrawlerVerifierTest extends TestCase
         $webcrawlerVerifier = new WebcrawlerVerifier();
         $userAgents = [
             'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_8) AppleWebKit/537.12.13 (KHTML, like Gecko)'
-                . ' Chrome/56.0.2715.80 Safari/537.12.13' => '192.168.0.1',
-            'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.1' => '192.168.0.1',
+                . ' Chrome/56.0.2715.80 Safari/537.12.13' => '127.0.0.1',
+            'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.1' => '127.0.0.1',
             'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71'
-                . ' Safari/537.36' => '192.168.0.1',
-            'Mozilla/4.0 (compatible; MSIE 6.0; Update a; AOL 6.0; Windows 98)' => '192.168.0.1',
+                . ' Safari/537.36' => '127.0.0.1',
+            'Mozilla/4.0 (compatible; MSIE 6.0; Update a; AOL 6.0; Windows 98)' => '127.0.0.1',
             'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.59'
-                . ' Safari/537.36 OPR/41.0.2353.46' => '192.168.0.1',
+                . ' Safari/537.36 OPR/41.0.2353.46' => '127.0.0.1',
             'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116'
-                . ' YaBrowser/16.9.1.1192 Yowser/2.5 Safari/537.36' => '192.168.0.1',
+                . ' YaBrowser/16.9.1.1192 Yowser/2.5 Safari/537.36' => '127.0.0.1',
             'Mozilla/5.0 (Linux; U; Android 4.1.2; ru-ru; GT-N7000 Build/JZO54K) AppleWebKit/534.30 (KHTML,'
-                . ' like Gecko) Version/4.0 Mobile Safari/534.30' => '192.168.0.1',
-            'Mozilla/5.0 (Windows NT 6.1; Trident/7.0; rv:11.0) like Gecko' => '192.168.0.1',
+                . ' like Gecko) Version/4.0 Mobile Safari/534.30' => '127.0.0.1',
+            'Mozilla/5.0 (Windows NT 6.1; Trident/7.0; rv:11.0) like Gecko' => '127.0.0.1',
             'Mozilla/5.0 (Linux; U; Android 4.2.2; ru-ru; Q45/A45 Build/JDQ39) AppleWebKit/534.30 (KHTML, like Gecko)'
-                . ' Version/4.0 Mobile Safari/534.30' => '192.168.0.1'
+                . ' Version/4.0 Mobile Safari/534.30' => '127.0.0.1'
         ];
 
         foreach ($userAgents as $userAgent => $ip) {
@@ -115,7 +115,7 @@ class WebcrawlerVerifierTest extends TestCase
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
-            '192.168.0.1'
+            '127.0.0.1'
         ));
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
@@ -143,7 +143,7 @@ class WebcrawlerVerifierTest extends TestCase
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
-            '192.168.0.1'
+            '127.0.0.1'
         ));
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
@@ -177,7 +177,7 @@ class WebcrawlerVerifierTest extends TestCase
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
-            '192.168.0.1'
+            '127.0.0.1'
         ));
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
@@ -257,7 +257,7 @@ class WebcrawlerVerifierTest extends TestCase
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
-            '192.168.0.1'
+            '127.0.0.1'
         ));
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
@@ -285,7 +285,7 @@ class WebcrawlerVerifierTest extends TestCase
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
-            '192.168.0.1'
+            '127.0.0.1'
         ));
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
@@ -301,7 +301,7 @@ class WebcrawlerVerifierTest extends TestCase
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
-            '192.168.0.1'
+            '127.0.0.1'
         ));
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
@@ -335,7 +335,7 @@ class WebcrawlerVerifierTest extends TestCase
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
-            '192.168.0.1'
+            '127.0.0.1'
         ));
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
@@ -384,7 +384,7 @@ class WebcrawlerVerifierTest extends TestCase
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
-            '192.168.0.1'
+            '127.0.0.1'
         ));
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
@@ -412,7 +412,7 @@ class WebcrawlerVerifierTest extends TestCase
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
-            '192.168.0.1'
+            '127.0.0.1'
         ));
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
@@ -478,7 +478,7 @@ class WebcrawlerVerifierTest extends TestCase
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
-            '192.168.0.1'
+            '127.0.0.1'
         ));
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
@@ -506,7 +506,7 @@ class WebcrawlerVerifierTest extends TestCase
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
-            '192.168.0.1'
+            '127.0.0.1'
         ));
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
@@ -521,7 +521,7 @@ class WebcrawlerVerifierTest extends TestCase
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
-            '192.168.0.1'
+            '127.0.0.1'
         ));
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
@@ -549,7 +549,7 @@ class WebcrawlerVerifierTest extends TestCase
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
-            '192.168.0.1'
+            '127.0.0.1'
         ));
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
@@ -564,7 +564,7 @@ class WebcrawlerVerifierTest extends TestCase
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
-            '192.168.0.1'
+            '127.0.0.1'
         ));
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
@@ -595,7 +595,7 @@ class WebcrawlerVerifierTest extends TestCase
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
-            '192.168.0.1'
+            '127.0.0.1'
         ));
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
@@ -629,7 +629,7 @@ class WebcrawlerVerifierTest extends TestCase
         foreach ($userAgents as $userAgent => $ip) {
             $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
                 $userAgent,
-                '192.168.0.1'
+                '127.0.0.1'
             ));
             $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
                 $userAgent,
@@ -693,7 +693,7 @@ class WebcrawlerVerifierTest extends TestCase
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
-            '192.168.0.1'
+            '127.0.0.1'
         ));
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
@@ -721,7 +721,7 @@ class WebcrawlerVerifierTest extends TestCase
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
-            '192.168.0.1'
+            '127.0.0.1'
         ));
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
@@ -736,7 +736,7 @@ class WebcrawlerVerifierTest extends TestCase
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
-            '192.168.0.1'
+            '127.0.0.1'
         ));
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
@@ -751,7 +751,7 @@ class WebcrawlerVerifierTest extends TestCase
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
-            '192.168.0.1'
+            '127.0.0.1'
         ));
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
@@ -778,7 +778,7 @@ class WebcrawlerVerifierTest extends TestCase
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
-            '192.168.0.1'
+            '127.0.0.1'
         ));
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
@@ -842,7 +842,7 @@ class WebcrawlerVerifierTest extends TestCase
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
-            '192.168.0.1'
+            '127.0.0.1'
         ));
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
@@ -857,7 +857,7 @@ class WebcrawlerVerifierTest extends TestCase
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
-            '192.168.0.1'
+            '127.0.0.1'
         ));
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
@@ -872,7 +872,7 @@ class WebcrawlerVerifierTest extends TestCase
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
-            '192.168.0.1'
+            '127.0.0.1'
         ));
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
@@ -887,7 +887,7 @@ class WebcrawlerVerifierTest extends TestCase
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
-            '192.168.0.1'
+            '127.0.0.1'
         ));
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
@@ -913,7 +913,7 @@ class WebcrawlerVerifierTest extends TestCase
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
-            '192.168.0.1'
+            '127.0.0.1'
         ));
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
@@ -928,7 +928,7 @@ class WebcrawlerVerifierTest extends TestCase
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
-            '192.168.0.1'
+            '127.0.0.1'
         ));
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
@@ -943,7 +943,7 @@ class WebcrawlerVerifierTest extends TestCase
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
-            '192.168.0.1'
+            '127.0.0.1'
         ));
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
@@ -958,7 +958,7 @@ class WebcrawlerVerifierTest extends TestCase
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
-            '192.168.0.1'
+            '127.0.0.1'
         ));
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
@@ -973,7 +973,7 @@ class WebcrawlerVerifierTest extends TestCase
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
-            '192.168.0.1'
+            '127.0.0.1'
         ));
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
@@ -988,7 +988,7 @@ class WebcrawlerVerifierTest extends TestCase
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
-            '192.168.0.1'
+            '127.0.0.1'
         ));
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
@@ -1020,7 +1020,7 @@ class WebcrawlerVerifierTest extends TestCase
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
-            '192.168.0.1'
+            '127.0.0.1'
         ));
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
@@ -1035,7 +1035,7 @@ class WebcrawlerVerifierTest extends TestCase
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
-            '192.168.0.1'
+            '127.0.0.1'
         ));
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
@@ -1051,7 +1051,7 @@ class WebcrawlerVerifierTest extends TestCase
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
-            '192.168.0.1'
+            '127.0.0.1'
         ));
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
@@ -1066,7 +1066,7 @@ class WebcrawlerVerifierTest extends TestCase
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
-            '192.168.0.1'
+            '127.0.0.1'
         ));
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
@@ -1081,7 +1081,7 @@ class WebcrawlerVerifierTest extends TestCase
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
-            '192.168.0.1'
+            '127.0.0.1'
         ));
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
@@ -1106,7 +1106,7 @@ class WebcrawlerVerifierTest extends TestCase
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
-            '192.168.0.1'
+            '127.0.0.1'
         ));
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
@@ -1133,7 +1133,7 @@ class WebcrawlerVerifierTest extends TestCase
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
-            '192.168.0.1'
+            '127.0.0.1'
         ));
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
@@ -1148,7 +1148,7 @@ class WebcrawlerVerifierTest extends TestCase
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
-            '192.168.0.1'
+            '127.0.0.1'
         ));
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
@@ -1163,7 +1163,7 @@ class WebcrawlerVerifierTest extends TestCase
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
-            '192.168.0.1'
+            '127.0.0.1'
         ));
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
@@ -1178,7 +1178,7 @@ class WebcrawlerVerifierTest extends TestCase
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
-            '192.168.0.1'
+            '127.0.0.1'
         ));
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
@@ -1221,7 +1221,7 @@ class WebcrawlerVerifierTest extends TestCase
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
-            '192.168.0.1'
+            '127.0.0.1'
         ));
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
@@ -1236,7 +1236,7 @@ class WebcrawlerVerifierTest extends TestCase
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
-            '192.168.0.1'
+            '127.0.0.1'
         ));
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
@@ -1251,7 +1251,7 @@ class WebcrawlerVerifierTest extends TestCase
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
-            '192.168.0.1'
+            '127.0.0.1'
         ));
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
@@ -1266,7 +1266,7 @@ class WebcrawlerVerifierTest extends TestCase
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
-            '192.168.0.1'
+            '127.0.0.1'
         ));
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
@@ -1281,7 +1281,7 @@ class WebcrawlerVerifierTest extends TestCase
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
-            '192.168.0.1'
+            '127.0.0.1'
         ));
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
@@ -1306,7 +1306,7 @@ class WebcrawlerVerifierTest extends TestCase
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
-            '192.168.0.1'
+            '127.0.0.1'
         ));
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
@@ -1430,7 +1430,7 @@ class WebcrawlerVerifierTest extends TestCase
 
         $this->assertEquals($webcrawlerVerifier::UNVERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
-            '192.168.0.1'
+            '127.0.0.1'
         ));
         $this->assertEquals($webcrawlerVerifier::VERIFIED, $webcrawlerVerifier->verify(
             $userAgent,
@@ -1505,7 +1505,7 @@ class WebcrawlerVerifierTest extends TestCase
         foreach ($userAgents as $userAgent => $ip) {
             $this->assertEquals($verifier::UNVERIFIED, $verifier->verify(
                 $userAgent,
-                '192.168.0.1'
+                '127.0.0.1'
             ));
             $this->assertEquals($verifier::VERIFIED, $verifier->verify(
                 $userAgent,
